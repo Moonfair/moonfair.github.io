@@ -2,56 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://moonfair.github.io/post/ManhattanDistance/</loc>
+    <loc>https://moonfair.cn/post/ManhattanDistance/</loc>
     
     <lastmod>2021-03-30</lastmod>
     
   </url>
   
   <url>
-    <loc>https://moonfair.github.io/post/hehe/</loc>
-    
-    <lastmod>2021-03-30</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://moonfair.github.io/post/haha/</loc>
-    
-    <lastmod>2021-03-30</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://moonfair.github.io/lib/three/renovate.json</loc>
+    <loc>https://moonfair.cn/lib/three/renovate.json</loc>
     
     <lastmod>2021-03-29</lastmod>
     
   </url>
   
   <url>
-    <loc>https://moonfair.github.io/lib/three/package.json</loc>
+    <loc>https://moonfair.cn/lib/three/package.json</loc>
     
     <lastmod>2021-03-29</lastmod>
     
   </url>
   
   <url>
-    <loc>https://moonfair.github.io/lib/three/README</loc>
+    <loc>https://moonfair.cn/lib/three/README</loc>
     
     <lastmod>2021-03-29</lastmod>
     
   </url>
   
   <url>
-    <loc>https://moonfair.github.io/lib/pace/README</loc>
+    <loc>https://moonfair.cn/lib/pace/README</loc>
     
     <lastmod>2021-03-29</lastmod>
     
   </url>
   
   <url>
-    <loc>https://moonfair.github.io/categories/</loc>
+    <loc>https://moonfair.cn/categories/</loc>
     
     <lastmod>2021-03-29</lastmod>
     
@@ -59,7 +45,7 @@
   
 
   <url>
-    <loc>https://moonfair.github.io/</loc>
+    <loc>https://moonfair.cn/</loc>
     <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -69,28 +55,14 @@
 
   
   <url>
-    <loc>https://moonfair.github.io/categories/algorithms/</loc>
+    <loc>https://moonfair.cn/categories/algorithms/</loc>
     <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://moonfair.github.io/categories/haha/</loc>
-    <lastmod>2021-03-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://moonfair.github.io/categories/algorithms/geometry/</loc>
-    <lastmod>2021-03-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://moonfair.github.io/categories/haha/hehe/</loc>
+    <loc>https://moonfair.cn/categories/algorithms/geometry/</loc>
     <lastmod>2021-03-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

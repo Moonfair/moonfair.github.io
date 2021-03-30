@@ -95,21 +95,4 @@
         <category>几何</category>
       </categories>
   </entry>
-  <entry>
-    <title>haha</title>
-    <url>/post/haha/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>haha</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>hehe</title>
-    <url>/post/hehe/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>haha</category>
-        <category>hehe</category>
-      </categories>
-  </entry>
 </search>
