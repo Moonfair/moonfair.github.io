@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>曼哈顿距离总结</title>
+    <url>/2021/03/30/ManhattanDistance/</url>
+    <content><![CDATA[<ul>
+<li><p><a href="https://www.luogu.com.cn/problem/P5098">最大曼哈顿距离</a></p>
+</li>
+<li><p><a href="https://leetcode-cn.com/problems/maximum-of-absolute-value-expression/">三维最大曼哈顿距离</a></p>
+</li>
+<li><p><a href="https://blog.csdn.net/Anxdada/article/details/81980574">k维最大曼哈顿距离</a></p>
+</li>
+<li><p><a href="https://www.luogu.com.cn/problem/P4648">切比雪夫距离转曼哈顿距离</a></p>
+</li>
+</ul>
+<h1 id="曼哈顿距离总结"><a href="#曼哈顿距离总结" class="headerlink" title="曼哈顿距离总结"></a>曼哈顿距离总结</h1><h2 id="曼哈顿距离介绍"><a href="#曼哈顿距离介绍" class="headerlink" title="曼哈顿距离介绍"></a>曼哈顿距离介绍</h2><p>在平面内两点 $A(x_1, y_1$) 和 $B(x_2, y_2) $之间的曼哈顿距离为 $|x_1-x_2|+|y_1-y_2|$ </p>
+<p>借张图说明：</p>
+<blockquote>
+<p><img src="https://moonfair-1301636332.cos.ap-nanjing.myqcloud.com/img/typora/distance-1.png" alt="曼哈顿距离"></p>
+<p>在 $A,B$ 间，<font color="yellow">黄线</font>、<font color="orange">橙线</font>都表示<strong>曼哈顿距离</strong>，而<font color="red">红线</font>、<font color="blue">蓝线</font>表示等价的曼哈顿距离</p>
+<p>From: <a href="https://oi-wiki.org/geometry/distance/#_2">OI Wiki</a></p>
+</blockquote>
+<h2 id="求二维最大曼哈顿距离"><a href="#求二维最大曼哈顿距离" class="headerlink" title="求二维最大曼哈顿距离"></a>求二维最大曼哈顿距离</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>顾名思义，在二维平面上给你 $n$ 个点, 求曼哈顿距离最远的两个点之间的曼哈顿距离</p>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><h4 id="暴力做法"><a href="#暴力做法" class="headerlink" title="暴力做法"></a>暴力做法</h4><p>直接用两层for循环遍历所有的点对，求出他们的曼哈顿距离，同时维护一个最大值</p>
+<h4 id="正经的做法"><a href="#正经的做法" class="headerlink" title="正经的做法"></a>正经的做法</h4><p>假设我们要求点 $A(x_1,y_1)$ 和 $B(x_2,y_2)$ 之间的曼哈顿距离</p>
+<p>我们可以先尝试对公式 $|x_1-x_2|+|y_1-y_2|$ 中的绝对值符号进行拆分：</p>
+<p>$$|x_1-x_2|+|y_1-y_2|=\begin{cases}x_1-x_2+y_1-y_2 &amp; x_1&gt;x_2, y_1&gt;y_2 \\ x_1-x_2+y_2-y_1 &amp; x_1&gt;x_2, y_1&lt;y_2 \\ x_2-x_1+y_1-y_2 &amp; x_1&lt;x_2, y_1&gt;y_2 \\ x_2-x_1+y_2-y_1 &amp; x_1&lt;x_2, y_1&lt;y_2\end{cases}$$ </p>
+<p>整理得到：</p>
+<p>$$|x_1-x_2|+|y_1-y_2|=\begin{cases}(+x_1+y_1)-(+x_2+y_2) &amp; x_1&gt;x_2, y_1&gt;y_2 \\ (+x_1-y_1)-(+x_2-y_2) &amp; x_1&gt;x_2, y_1&lt;y_2 \\ (-x_1+y_1)-(-x_2+y_2) &amp; x_1&lt;x_2, y_1&gt;y_2 \\ (-x_1-y_1)-(-x_2-y_2) &amp; x_1&lt;x_2, y_1&lt;y_2\end{cases}$$ </p>
+<p>我们发现：</p>
+<ol>
+<li>在展开绝对值的四种情况中，每一种都是 $X_1-X_2$ 的形式</li>
+<li>其中 $X_1$ 只与点 $A$ 有关， $X_2$ 只与点 $B$ 有关</li>
+<li>$X_1$ 和 $X_2$ 中，$x$ 和 $y$ 的正负号相同</li>
+<li>==$X$ 的四种情况对应了 $x$ 和 $y$ 所有可能的符号的组合==</li>
+</ol>
+<p>因此我们进行如下操作：</p>
+<ul>
+<li>对每一个点，我们求出 $(x-y)$、$(x+y)$、$(-x+y)$、$(-x-y)$ ，分别存放在四个数组 $A$、$B$、$C$、$D$ 中</li>
+<li>对于每一个数组，我们执行如下操作：<ul>
+<li>求出它的最大值 $Max$ 和最小值 $Min$</li>
+<li>求出最大值与最小值的差 $Res = Max - Min$ </li>
+</ul>
+</li>
+<li>求出所有 $Res$ 的最大值，即为答案：$Ans=max(A.Res,B.Res,C.Res,D.Res)$ </li>
+</ul>
+<p>这么做的意义是什么呢，我们逐步来分析</p>
+<ul>
+<li>如果我们在上边求出的数组 $A$ 中任意取出两个点相减，则代表<strong>这两个点间一种可能曼哈顿距离的表达</strong></li>
+<li>如果我们在上一步中取出的恰好是 $A$ 的最大值和最小值，则代表<strong>如果所有的点都选择 $A$ 所代表的这种表达，最大的曼哈顿距离是多少</strong></li>
+<li>考虑到我们想要的是<strong>在所有可能的表达中，最大的曼哈顿距离</strong>，因此我们只需要<strong>对每一种表达取最大曼哈顿距离，再取他们中的最大值</strong></li>
+</ul>
+<p>如此我们就做完了</p>
+<h4 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h4><p>不知道是否有人注意到，上述的思路其实存在一处模糊的地方：</p>
+<ul>
+<li>在上边的过程中，我们考虑的是<strong>所有可能的表达</strong>，然而实际的曼哈顿距离<strong>只是其中的一种表达</strong><ul>
+<li>因为真正选择了两个点后，$x_1$ 和 $x_2$ 之间以及 $y_1$ 和 $y_2$ 之间的大小已经关系确定了，四种表达里实际只有一种是有效的</li>
+</ul>
+</li>
+</ul>
+<p>这就导致一个问题：</p>
+<ul>
+<li>有没有可能，你通过上述方法选到的最大值采用的是 $A$ 表达，<strong>然而实际上这两个点的位置关系决定了它们应该采用 $B$ 表达，这个 $A$ 表达实际是无效的</strong>？</li>
+</ul>
+<p>请读者自行思考几分钟：</p>
+<p><img src="https://moonfair-1301636332.cos.ap-nanjing.myqcloud.com/img/typora/20200323145624.jpg"></p>
+<p>好的，公布答案：</p>
+<p><font size="7px" color="red">不可能的</font></p>
+<p>我们从原式的角度来看：</p>
+<p>$$|x_1-x_2|+|y_1-y_2|=\begin{cases}x_1-x_2+y_1-y_2 &amp; x_1&gt;x_2, y_1&gt;y_2 \\ x_1-x_2+y_2-y_1 &amp; x_1&gt;x_2, y_1&lt;y_2 \\ x_2-x_1+y_1-y_2 &amp; x_1&lt;x_2, y_1&gt;y_2 \\ x_2-x_1+y_2-y_1 &amp; x_1&lt;x_2, y_1&lt;y_2\end{cases}$$ </p>
+<ol>
+<li><p>假设我们选择的两个点满足 $x_1&gt;x_2, y_1&gt;y_2$ </p>
+</li>
+<li><p>那么有效的表达是<strong>第一行对应的表达</strong></p>
+</li>
+<li><p>如果我们选择了第二行对应的表达(一个无效的表达)，那么：</p>
+<p>3.1 $|x_1-x_2|$ 对应的仍是 $x_1-x_2$，不变</p>
+<p>3.2 $|y_1-y_2|$ 对应的由 $y_1-y_2$ 变为了 $y_2-y_1$，变小了(原本是正数，现在是负数)</p>
+<p>3.3 因此总体得到的结果变小了</p>
+</li>
+<li><p>同理可得，其他三种表达的结果也不如<strong>有效的表达</strong>大</p>
+</li>
+<li><p>因此，<strong>有效的表达就是最大的表达</strong></p>
+</li>
+<li><p>而我们在上述算法中选择的是<strong>所有点的所有可能的表达中，最大的一个</strong></p>
+</li>
+<li><p>那它自然也是<strong>对应的两个点的四种表达中，最大的一个</strong></p>
+</li>
+<li><p>由<strong>第5步</strong>的结论，它就是<strong>有效的表达</strong></p>
+</li>
+</ol>
+<h2 id="求三维曼哈顿距离"><a href="#求三维曼哈顿距离" class="headerlink" title="求三维曼哈顿距离"></a>求三维曼哈顿距离</h2>]]></content>
+      <categories>
+        <category>算法</category>
+        <category>几何</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>haha</title>
+    <url>/2021/03/29/haha/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>haha</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>hehe</title>
+    <url>/2021/03/30/hehe/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>haha</category>
+        <category>hehe</category>
+      </categories>
+  </entry>
+</search>
