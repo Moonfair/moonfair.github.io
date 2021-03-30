@@ -2,15 +2,15 @@
 <search>
   <entry>
     <title>曼哈顿距离总结</title>
-    <url>/2021/03/30/ManhattanDistance/</url>
+    <url>/post/ManhattanDistance/</url>
     <content><![CDATA[<ul>
-<li><p><a href="https://www.luogu.com.cn/problem/P5098">最大曼哈顿距离</a></p>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDUwOTg=">最大曼哈顿距离<i class="fa fa-external-link-alt"></i></span></p>
 </li>
-<li><p><a href="https://leetcode-cn.com/problems/maximum-of-absolute-value-expression/">三维最大曼哈顿距离</a></p>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS1jbi5jb20vcHJvYmxlbXMvbWF4aW11bS1vZi1hYnNvbHV0ZS12YWx1ZS1leHByZXNzaW9uLw==">三维最大曼哈顿距离<i class="fa fa-external-link-alt"></i></span></p>
 </li>
-<li><p><a href="https://blog.csdn.net/Anxdada/article/details/81980574">k维最大曼哈顿距离</a></p>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0FueGRhZGEvYXJ0aWNsZS9kZXRhaWxzLzgxOTgwNTc0">k维最大曼哈顿距离<i class="fa fa-external-link-alt"></i></span></p>
 </li>
-<li><p><a href="https://www.luogu.com.cn/problem/P4648">切比雪夫距离转曼哈顿距离</a></p>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDQ2NDg=">切比雪夫距离转曼哈顿距离<i class="fa fa-external-link-alt"></i></span></p>
 </li>
 </ul>
 <h1 id="曼哈顿距离总结"><a href="#曼哈顿距离总结" class="headerlink" title="曼哈顿距离总结"></a>曼哈顿距离总结</h1><h2 id="曼哈顿距离介绍"><a href="#曼哈顿距离介绍" class="headerlink" title="曼哈顿距离介绍"></a>曼哈顿距离介绍</h2><p>在平面内两点 $A(x_1, y_1$) 和 $B(x_2, y_2) $之间的曼哈顿距离为 $|x_1-x_2|+|y_1-y_2|$ </p>
@@ -18,7 +18,7 @@
 <blockquote>
 <p><img src="https://moonfair-1301636332.cos.ap-nanjing.myqcloud.com/img/typora/distance-1.png" alt="曼哈顿距离"></p>
 <p>在 $A,B$ 间，<font color="yellow">黄线</font>、<font color="orange">橙线</font>都表示<strong>曼哈顿距离</strong>，而<font color="red">红线</font>、<font color="blue">蓝线</font>表示等价的曼哈顿距离</p>
-<p>From: <a href="https://oi-wiki.org/geometry/distance/#_2">OI Wiki</a></p>
+<p>From: <span class="exturl" data-url="aHR0cHM6Ly9vaS13aWtpLm9yZy9nZW9tZXRyeS9kaXN0YW5jZS8jXzI=">OI Wiki<i class="fa fa-external-link-alt"></i></span></p>
 </blockquote>
 <h2 id="求二维最大曼哈顿距离"><a href="#求二维最大曼哈顿距离" class="headerlink" title="求二维最大曼哈顿距离"></a>求二维最大曼哈顿距离</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>顾名思义，在二维平面上给你 $n$ 个点, 求曼哈顿距离最远的两个点之间的曼哈顿距离</p>
 <h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><h4 id="暴力做法"><a href="#暴力做法" class="headerlink" title="暴力做法"></a>暴力做法</h4><p>直接用两层for循环遍历所有的点对，求出他们的曼哈顿距离，同时维护一个最大值</p>
@@ -97,7 +97,7 @@
   </entry>
   <entry>
     <title>haha</title>
-    <url>/2021/03/29/haha/</url>
+    <url>/post/haha/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>haha</category>
@@ -105,7 +105,7 @@
   </entry>
   <entry>
     <title>hehe</title>
-    <url>/2021/03/30/hehe/</url>
+    <url>/post/hehe/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>haha</category>
